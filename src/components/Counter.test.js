@@ -13,4 +13,18 @@ describe("Counter component", () => {
 
     expect(button.textContent).toBe("0");
   });
+
+  test("should increment the counter after one click", () => {
+    const container = document.createElement("div");
+    document.body.appendChild(container);
+
+    ReactDOM.render(<Counter />, container);
+
+    const button = document.body.querySelector("button");
+    expect(button.textContent).toBe("0");
+
+    button.click();
+
+    expect(button.textContent).toBe("1");
+  });
 });
