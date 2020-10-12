@@ -23,7 +23,7 @@ describe("Counter component", () => {
     const button = document.body.querySelector("button");
     expect(button.textContent).toBe("0");
 
-    button.click();
+    button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
 
     expect(button.textContent).toBe("1");
   });
